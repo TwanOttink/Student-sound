@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: #f2f3f5;
 }
 
 html {
@@ -45,4 +46,15 @@ body {
 
 .row:last-of-type {
     margin-bottom: 0;
+}
+
+.history_table {
+    text-align: left;
+    width: 100%;
+}
+
+.history_table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
