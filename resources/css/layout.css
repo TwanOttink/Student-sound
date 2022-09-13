@@ -30,3 +30,14 @@
     border-radius: 10px 10px 0 0;
     padding: 56px;
 }
+
+.history_table {
+    text-align: left;
+    width: 100%;
+}
+
+.history_table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
