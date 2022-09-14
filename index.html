@@ -43,6 +43,7 @@
             </div>
 
             <div class="row">
+                <button id="refreshData" class="button">Refresh data</button>
                 <h2 class="subtitle">Connected classrooms:</h2>
                 <div class="devices-wrapper">
 
@@ -133,5 +134,112 @@
     </footer>
     <script src="resources/js/devices.js"></script>
     <script src="resources/js/accordeon.js"></script>
+
+    <script>
+
+        // refresh data
+        document.getElementById('refreshData').addEventListener('click', function() {
+            fetchTData();
+        });
+    </script>
+
+    <script>
+        // global
+        var points = [];
+
+        function fetchTData() {
+            // fetchpoint for request
+            var xmlhttp = new XMLHttpRequest();
+            var url = "http://localhost/throwdata.py";
+
+            // empty data points array
+            points = [];
+
+            // request status
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var measurements = JSON.parse(this.responseText);
+                    for (i = 0; i < measurements.length; i++) {
+                        points.push({
+                            x:moment.unix(measurements[i].unixtime),
+                            y:measurements[i].waarde,
+                        });
+                    }
+                    console.log("test");
+                    console.log(points);
+                    // we have data: draw
+                    drawChart();
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+
+        function drawChart() {
+            // // chart object requires context, data and options
+            // var ctx = document.getElementById("tempChart").getContext('2d');
+            //
+            // var data = {
+            //     datasets: [{
+            //         label: "Temperatuur",
+            //         borderColor: "rgba(0,220,220,0.5)",
+            //         backgroundColor: "rgba(0,220,220,0.2)",
+            //         pointBorderColor: "rgba(0,220,220,1)",
+            //         data: points,
+            //     },
+            //     ],
+            // };
+            // var options = {
+            //     title: { display: true, text: 'Weerstation' },
+            //     scales: {
+            //         xAxes: [{
+            //             display: true,
+            //             type: 'time',
+            //             distribution: 'linear',
+            //             ticks: { source: 'auto' },
+            //             bounds: 'data',
+            //             time: { unit: 'minute',
+            //                 stepSize: 1,
+            //                 displayFormats: { minute: 'H:mm:ss' },
+            //             },
+            //             scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'Tijd',
+            //             },
+            //         }],
+            //         yAxes: [{
+            //             display: true,
+            //             scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'C',
+            //             },
+            //             ticks: {
+            //                 suggestedMin: 0.0,
+            //                 suggestedMax: 100.0,
+            //             },
+            //         }],
+            //     },
+            //     elements: {
+            //         line: {
+            //             tension: 0,
+            //         }
+            //     },
+            // }
+            //
+            // // create chart with these parameters
+            // window.tempChart = new Chart(ctx, {
+            //     type: 'line',
+            //     data : data,
+            //     options: options
+            // });
+        }
+
+        // create chart with fetched temperature data
+        window.onload = function() {
+            fetchTData();
+        }
+
+    </script>
+
 </body>
 </html>
