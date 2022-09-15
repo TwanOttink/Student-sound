@@ -25,3 +25,11 @@ h1, h2 {
     font-style: normal;
     font-family: "Roboto";
 }
+
+.yellow {
+    color: #FAA61A !important;
+}
+
+.red {
+    color: red !important;
+}

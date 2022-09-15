@@ -12,13 +12,13 @@ mariadb_connection = mariadb.connect(
     user='lezer',
     password='WindesheimICTHeeftZiektes!',
     database='geluid',
-    host='145.44.70.50')
+    host='192.168.25.212')
 
 # create a cursor object for executing queries
 cursor = mariadb_connection.cursor()
 
 # prepare a select query (only the 100 last items)
-stmt = "SELECT UNIX_TIMESTAMP(tijd) as unixtime, waarde FROM meting ORDER BY unixtime DESC LIMIT 25"
+stmt = "SELECT UNIX_TIMESTAMP(tijd) as unixtime, classroom, waarde FROM meting ORDER BY tijd DESC LIMIT 150"
 
 # execute the query (parameter must be a tuple)
 cursor.execute(stmt)
