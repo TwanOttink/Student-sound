@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: #f2f3f5 !important;
+    font-family: "Roboto";
+    width: 100vw;
+}
+
+body {
+    padding-bottom: 72px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    margin: 104px auto 0;
+    max-width: 1280px;
+    border-radius: 10px 10px 0 0;
+    padding: 56px;
+    box-shadow:
+            3.4px 2.4px 2.7px -63px rgba(0, 0, 0, 0.006),
+            8.7px 6.2px 6.9px -63px rgba(0, 0, 0, 0.009),
+            17.7px 12.6px 14.2px -63px rgba(0, 0, 0, 0.015),
+            36.5px 25.9px 29.2px -63px rgba(0, 0, 0, 0.024),
+            100px 71px 80px -63px rgba(0, 0, 0, 0.04);
+}
+
+@media only screen and (max-width : 1080px) {
+    .container {
+        margin: 72px auto 0;
+        width: 95%;
+        padding: 32px 24px;
+    }
+}
+
+.row {
+    min-width: 100%;
+    margin-bottom: 40px;
+}
+
+.row:last-of-type {
+    margin-bottom: 0;
+}
+
+.history_table {
+    text-align: left;
+    width: 100%;
+}
+
+.history_table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-radius: 3px;
+}

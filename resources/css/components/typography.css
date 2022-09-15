@@ -1,0 +1,35 @@
+h1, h2 {
+    font-weight: 400;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Roboto";
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Roboto";
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Roboto";
+}
+
+.yellow {
+    color: #FAA61A !important;
+}
+
+.red {
+    color: red !important;
+}

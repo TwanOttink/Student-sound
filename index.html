@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Sound</title>
+
+    <!-- Load favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon-16x16.png">
+    <link rel="manifest" href="resources/images/site.webmanifest">
+    <link rel="mask-icon" href="resources/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End load favicon -->
+
+    <link rel="stylesheet" href="./resources/css/main.css">
+
+    <!-- Load fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- End load fonts -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="resources/js/lib/moment.js"></script>
+    <script src="resources/js/lib/Chart.js"></script>
+
+    <title>Student Sound Dashboard</title>
 </head>
 <body>
+    <header class="header">
+        <a href="//windesheim.nl/" target="_blank" class="logo">
+            <img src="./resources/images/Windesheim_logo.png" alt="Windesheim logo">
+        </a>
+    </header>
+    <main class="main">
+        <div class="container">
+
+            <div class="row">
+                <div class="intro">
+                    <h1 class="title">Student sound dashboard</h1>
+                    <p class="text">This webpage is made for educational purposes and is build by Windesheim students. Do not use this page as a viable source of information.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <button id="refreshData" class="button">Refresh data</button>
+                <h2 class="subtitle">Connected classrooms:</h2>
+                <div id="devices-wrapper" class="devices-wrapper"></div>
+            </div>
+
+            <div class="row history_data">
+                <h2 class="subtitle">Latest 10 measurements:  </h2>
+
+                <table id="history_table" class="history_table">
+                    <tr>
+                        <th>Location</th>
+                        <th>Timestamp</th>
+                        <th>Measurement</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="copyright text">© Hogeschool Windesheim</div>
+        </div>
+
+    </footer>
+    
+    <script src="resources/js/devices.js"></script>
+    <script src="resources/js/accordeon.js"></script>
 
 </body>
 </html>

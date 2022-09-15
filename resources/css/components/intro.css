@@ -1,0 +1,10 @@
+.intro {
+    width: 100%;
+    max-width: 50%;
+}
+
+@media only screen and (max-width : 1080px) {
+    .intro {
+        max-width: 90%;
+    }
+}
